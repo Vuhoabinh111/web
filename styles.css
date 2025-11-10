@@ -1,0 +1,33 @@
+:root{
+  --bg:#0f1216; --card:#151a21; --text:#e6eaf2; --muted:#97a0b1;
+  --accent:#7bd389; --primary:#4f8cff; --border:#222a35;
+}
+:root.light{
+  --bg:#f7f9fc; --card:#ffffff; --text:#121722; --muted:#4d5a6d;
+  --accent:#2ecc71; --primary:#2f6bff; --border:#e6ebf2;
+}
+*{box-sizing:border-box}
+body{ margin:0; background:var(--bg); color:var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif; }
+.hidden{ display:none !important; }
+.bar{ display:flex; align-items:center; justify-content:space-between; padding:10px 14px; border-bottom:1px solid var(--border); position:sticky; top:0; background:var(--bg); z-index:10; }
+.bar h1{margin:0; font-size:18px}
+.actions{display:flex; gap:8px}
+.container{max-width:900px; margin:0 auto; padding:16px}
+.card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px; box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.grid{display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:12px}
+label{display:grid; gap:6px; font-size:14px; color:var(--muted)}
+input{padding:10px 12px; border-radius:10px; border:1px solid var(--border); background:transparent; color:var(--text)}
+.btn{padding:8px 12px; border-radius:10px; border:1px solid var(--border); background:transparent; color:var(--text); cursor:pointer}
+.btn.primary{background:var(--primary); border-color:transparent; color:white}
+.hint{color:var(--muted); margin-top:8px}
+.roombar{display:flex; justify-content:space-between; color:var(--muted); margin-bottom:8px}
+.messages{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; height: 50vh; overflow:auto; border:1px solid var(--border); border-radius:12px; padding:12px; background: rgba(0,0,0,.05); }
+.message{display:grid; gap:2px; background: var(--card); border:1px solid var(--border); padding:10px; border-radius:12px}
+.meta{font-size:12px; color:var(--muted)}
+.text{white-space: pre-wrap; word-wrap: break-word}
+.mine{border-color: color-mix(in oklab, var(--primary), white 10%); box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--primary), transparent 70%)}
+.system{color:var(--muted); text-align:center; background:transparent; border:none}
+.typing{margin:8px 6px; color:var(--muted); font-size:13px}
+.composer{display:flex; gap:8px; margin-top:8px}
+.input{flex:1}
+@media (max-width:800px){ .grid{grid-template-columns:1fr} .messages{height: 60vh} }

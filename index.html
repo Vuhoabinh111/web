@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Chat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bar">
+    <h1>💬 Simple Chat</h1>
+    <div class="actions">
+      <button id="themeBtn" class="btn">🌗</button>
+      <button id="clearBtn" class="btn">🧹</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card" id="joinCard">
+      <h2>Kết nối phòng chat</h2>
+      <div class="grid">
+        <label>Nickname
+          <input id="nameInput" placeholder="Ví dụ: Minh" maxlength="30" />
+        </label>
+        <label>Phòng
+          <input id="roomInput" placeholder="Ví dụ: neu-2025" maxlength="40" />
+        </label>
+      </div>
+      <button id="joinBtn" class="btn primary">Vào phòng</button>
+      <p class="hint">Bạn có thể tạo phòng mới chỉ bằng cách gõ tên phòng bất kỳ.</p>
+    </section>
+
+    <section class="card hidden" id="chatCard" aria-live="polite">
+      <div class="roombar">
+        <div>
+          <strong>Phòng:</strong> <span id="roomName">—</span>
+        </div>
+        <div id="status">Đang kết nối...</div>
+      </div>
+      <ul id="messages" class="messages" role="list"></ul>
+      <div id="typing" class="typing hidden">—</div>
+      <form id="form" class="composer" autocomplete="off">
+        <input id="msg" class="input" placeholder="Nhập tin nhắn và nhấn Enter..." maxlength="2000" />
+        <button class="btn primary" type="submit">Gửi</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="foot">Made with WebSocket · Lưu ý: Demo này không mã hoá end‑to‑end.</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
